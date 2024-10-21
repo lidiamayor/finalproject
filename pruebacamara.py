@@ -9,9 +9,7 @@ while True:
         print("Error al capturar el video")
         break
 
-    # Aquí puedes agregar el procesamiento de tu modelo, por ejemplo, detección con YOLO
-
-    cv2.imshow('Detección de Fatiga', frame)
+    cv2.imshow('Deteccion de Fatiga', frame)
 
     # Presionar 'q' para salir del loop
     if cv2.waitKey(1) & 0xFF == ord('q'):
