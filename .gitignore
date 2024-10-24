@@ -9,4 +9,4 @@ data/info-people/taked_photos
 data/info-people/new_photos
 database
 runs
-__pycache__
+.__pycache__
