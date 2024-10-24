@@ -23,7 +23,7 @@ CONFIG = {
     "data_file": str(INFO_DIR / "face_data.pkl"),
     "data_frame_file": str(INFO_DIR / "people_data.csv"),
     "data_status": str(INFO_DIR / "status.csv"),
-    "model_path": "../model/model_3x2_.pt",
+    "model_path": "model/model_3x2_.pt",
     "threshold": 0.55,
 }
 
@@ -59,7 +59,7 @@ def main():
     col0, col1, col2 = st.columns([1, 3, 1])
     
     with col1:
-        st.image('logo_driveguard_blue.png')
+        st.image('images/logo_driveguard_blue.png')
         placeholder = st.empty()  # Para el video
         
     with col2:
