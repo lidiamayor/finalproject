@@ -46,11 +46,11 @@ La interfaz del proyecto fue construida utilizando **Streamlit**, permitiendo la
 3. **Visualización de Datos**:
    - Los datos generados se pueden analizar utilizando **Tableau**, donde se muestran los patrones de fatiga a lo largo del tiempo, distribuidos por hora del día y estación del año.
 
-## 🎥 Videos Demostrativos
+## 🎥 Demostrativos
 
-- **💻 Demostración de Streamlit**: [Ver vídeo](link-to-streamlit-video)
-- **📊 Análisis de datos en Tableau**: [Ver vídeo](link-to-tableau-video)
-- **🎤 Presentación del Proyecto**: [Ver presentación](link-to-presentation-video)
+- **💻 Demostración de Streamlit**: [Ver vídeo](https://www.canva.com/design/DAGUfQ6YOz4/dzUl5iwBRL0HAGdqNJ_8Zw/watch?utm_content=DAGUfQ6YOz4&utm_campaign=designshare&utm_medium=link&utm_source=editoro)
+- **📊 Análisis de datos en Tableau**: [Ver vídeo](https://public.tableau.com/views/DriveGuard/Historia?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- **🎤 Presentación del Proyecto**: [Ver presentación](https://www.canva.com/design/DAGUeHJxpcc/KH67qUOGjCwiN0sOYC0sfA/view?utm_content=DAGUeHJxpcc&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 ## 🛠️ Tecnologías Utilizadas
 
