@@ -23,7 +23,7 @@ CONFIG = {
     "data_file": str(INFO_DIR / "face_data.pkl"),
     "data_frame_file": str(INFO_DIR / "people_data.csv"),
     "data_status": str(INFO_DIR / "status.csv"),
-    "model_path": "model/model_3x2_.pt",
+    "model_path": "model/model_.pt",
     "threshold": 0.55,
 }
 
