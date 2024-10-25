@@ -9,9 +9,7 @@ import streamlit as st
 from PIL import Image, ImageEnhance
 import random
 import io
-import numpy as np
-#import threading
-#import time
+#import numpy as np
 import face_recognition
 import winsound
 import shutil
