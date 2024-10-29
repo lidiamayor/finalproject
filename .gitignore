@@ -1,0 +1,12 @@
+notebooks/.env
+runs
+notebooks/image-1.jpg
+notebooks/image-2.jpg
+notebooks/image-3.jpg
+notebooks/runs
+notebooks/info-people/images
+data/info-people/images
+data/info-people/taked_photos
+data/info-people/new_photos
+database
+__pycache__
