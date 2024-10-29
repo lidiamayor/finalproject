@@ -11,20 +11,21 @@
 
 ## 💡 Solución Propuesta
 
-### 1. 🧑‍💻 Detección Facial
-Utilizando la librería **face_recognition**, extraemos características de la cara del conductor y las almacenamos en un archivo `.pkl`. A partir de estos datos, generamos un archivo **CSV** con la información de los conductores monitoreados.
+### 1. 🧑‍💻 Creación de la Base de Datos
+Para el monitoreo del estado del conductor, se creó una base de datos propia utilizando **Roboflow**, una plataforma que permite a los desarrolladores crear conjuntos de datos y modelos de visión computacional. Se tomaron aproximadamente 300 fotos de 5 personas diferentes (con distintos géneros y edades), las cuales fueron etiquetadas manualmente en tres categorías: **focus**, **distracted**, y **tired**. Posteriormente, se amplió la base de datos hasta alcanzar unas 740 imágenes utilizando técnicas de rotación, cambio de brillo y difuminado, lo que permite tener en cuenta las variaciones posibles en los vídeos, como la distancia del conductor a la cámara o las condiciones de iluminación.
 
 ### 2. 😴 Detección de Cansancio
-Hemos construido una base de datos de imágenes etiquetadas para entrenar un modelo de clasificación de fatiga utilizando **YOLO (You Only Look Once)** de Ultralytics. El modelo fue entrenado inicialmente con 300 imágenes y posteriormente expandido a 750 imágenes, logrando una precisión del **88%** en la clasificación de estados de fatiga.
+Para lograr un modelo eficaz, se utilizó el algoritmo **YOLO (You Only Look Once)** de **Ultralytics**, yolov8s-cls, que es un modelo preentrenado en **ImageNet** para la clasificación de imágenes. Se optó por el modelo **small** para asegurar que no fuera muy pesado en el procesamiento de vídeo, logrando una precisión del **87%** en las predicciones (aproximadamente 10ms por predicción). Una vez entrenado el modelo, se guardó utilizando **Pytorch**, una librería de Machine Learning para aplicaciones de visión por computadora.
 
 ### 3. 🔄 Reentrenamiento del Modelo
-Para mejorar la precisión y robustez del modelo, se generaron nuevas imágenes distorsionadas (rotaciones, cambios de brillo, etc.) utilizando la librería **PIL** (Python Imaging Library). Este reentrenamiento permitió un mejor ajuste del modelo para detectar la fatiga en diferentes condiciones de luz y ángulos.
+El modelo se reentrena constantemente para mejorar su precisión. Para ello, se capturan nuevas imágenes del conductor usando **Streamlit**. Las imágenes son aumentadas rotándolas, invirtiéndolas, cambiando el brillo y haciendo zoom, pasando de tener 2 imágenes de cada tipo a 20. Finalmente, el modelo se ajusta nuevamente con las nuevas imágenes utilizando **YOLO**.
 
 ### 4. 🚨 Alarma de Fatiga
-Una vez que el sistema detecta que el conductor está cansado, se activa una alarma utilizando **winsound** para alertar al conductor y evitar un posible accidente.
+Cuando el sistema detecta que el conductor está cansado durante más de 2 segundos, se activa una alarma sonora utilizando **winsound**, que permite acceder a los mecanismos básicos de reproducción de sonido en Windows.
 
-### 5. 💻 Interfaz de Usuario
-La interfaz del proyecto fue construida utilizando **Streamlit**, permitiendo la captura de fotos en tiempo real y mostrando los resultados de la detección de fatiga. También se incluye una integración con **OpenCV** para mostrar las imágenes del conductor en tiempo real.
+### 5. 💻 Interfaz de Usuario y Visualización
+La interfaz del proyecto fue construida utilizando **Streamlit**, permitiendo la captura de fotos en tiempo real y mostrando los resultados de la detección de fatiga. Para visualizar y monitorear en tiempo real, se utilizó **OpenCV**, que es una librería optimizada para visión artificial. Además, los datos generados se recopilan y almacenan utilizando **Pandas** en un archivo .csv, y se visualizan en un dashboard interactivo en **Tableau**, facilitando la comprensión y análisis de los patrones de fatiga a lo largo del tiempo.
+
 
 ## 🚀 Cómo Usar el Proyecto
 
@@ -55,11 +56,16 @@ La interfaz del proyecto fue construida utilizando **Streamlit**, permitiendo la
 ## 🛠️ Tecnologías Utilizadas
 
 - **Python**: Desarrollo de la lógica principal.
-- **Streamlit**: Interfaz de usuario para capturar fotos y mostrar los resultados.
-- **YOLO (Ultralytics)**: Modelo de detección de fatiga.
-- **Pillow (PIL)**: Manipulación de imágenes para el reentrenamiento.
-- **face_recognition**: Detección de características faciales.
+- **Roboflow**: Creación y ampliación de la base de datos de imágenes para el modelo de visión por computadora.
+- **YOLO (Ultralytics)**: Modelo reentrenado para el monitoreo del conductor.
+- **Pytorch**: Librería de Machine Learning utilizada para almacenar el modelo final.
 - **OpenCV**: Visualización en tiempo real de la cara del conductor.
+- **Winsound**: Activación de la alarma sonora cuando el conductor está cansado.
+- **face_recognition**: Detección de características faciales.
+- **Pickle**: Almacenamiento de codificaciones faciales y jerarquía de objetos de Python.
+- **Streamlit**: Interfaz de usuario para capturar fotos y mostrar los resultados.
+- **Pillow (PIL)**: Manipulación de imágenes para el reentrenamiento.
+- **Pandas**: Recopilación y almacenamiento de datos en archivos .csv para su posterior análisis.
 - **Tableau**: Análisis visual de los datos recolectados.
 
 ## ✉️ Contacto
