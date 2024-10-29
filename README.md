@@ -58,7 +58,7 @@ La interfaz del proyecto fue construida utilizando **Streamlit**, permitiendo la
 - **Python**: Desarrollo de la lógica principal.
 - **Roboflow**: Creación y ampliación de la base de datos de imágenes para el modelo de visión por computadora.
 - **YOLO (Ultralytics)**: Modelo reentrenado para el monitoreo del conductor.
-- **Pytorch**: Librería de Machine Learning utilizada para almacenar el modelo final.
+- **PyTorch**: Librería de Machine Learning utilizada para almacenar el modelo final.
 - **OpenCV**: Visualización en tiempo real de la cara del conductor.
 - **Winsound**: Activación de la alarma sonora cuando el conductor está cansado.
 - **face_recognition**: Detección de características faciales.
